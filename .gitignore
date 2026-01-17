@@ -206,3 +206,4 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 terraform/keys/
+ny_taxi_postgres_data/
