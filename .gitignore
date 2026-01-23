@@ -205,13 +205,14 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
-terraform/keys/
-ny_taxi_postgres_data/
 
-# Ignore the database data
-pipeline/ny_taxi_postgres_data/
-
-# Ignore the terraform state and keys
-terraform/.terraform/
-terraform/*.tfstate*
-terraform/keys/
+# Terraform sensitive files
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+# Module 1: Docker, Postgres, and Terraform
+Module 1: Docker, Postgres, and Terraform/ny_taxi_postgres_data/
+Module 1: Docker, Postgres, and Terraform/terraform/.terraform/
+Module 1: Docker, Postgres, and Terraform/terraform/*.tfstate*
+Module 1: Docker, Postgres, and Terraform/terraform/keys/
