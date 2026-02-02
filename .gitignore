@@ -215,4 +215,9 @@ crash.*.log
 Module 1: Docker, Postgres, and Terraform/ny_taxi_postgres_data/
 Module 1: Docker, Postgres, and Terraform/terraform/.terraform/
 Module 1: Docker, Postgres, and Terraform/terraform/*.tfstate*
-Module 1: Docker, Postgres, and Terraform/terraform/keys/
+Module 1: Docker, Postgres, and Terraform/terraform/keys/.terraform/
+*.tfstate*
+ny_taxi_postgres_data/
+.terraform/
+ny_taxi_postgres_data/
+01-docker-terraform/terraform/keys/creds.json
