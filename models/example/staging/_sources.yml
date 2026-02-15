@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    description: "Staging data sources for the project"
+    database: zoomcamp-data-engineer-484608
+    schema: zoomcamp
+    tables:
+      - name: yellow_taxi_partitioned
+      - name: green_taxi_partitioned
