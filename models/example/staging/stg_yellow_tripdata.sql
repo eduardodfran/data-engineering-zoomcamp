@@ -1,5 +1,5 @@
 select 
-    -- The following fields are selected from the source table 'green_taxi_partitioned'
+    -- The following fields are selected from the source table 'yellow_taxi_partitioned'
     -- identifiers
     cast(vendorid as int) as vendor_id,
     cast(ratecodeid as int) as rate_code_id,
@@ -7,14 +7,13 @@ select
     cast(dolocationid as int) as do_location_id,
 
     -- timestamps are selected and aliased to match the expected output schema
-    cast(lpep_pickup_datetime as timestamp) as pickup_datetime,
-    cast(lpep_dropoff_datetime as timestamp) as dropoff_datetime,
+    cast(tpep_pickup_datetime as timestamp) as pickup_datetime,
+    cast(tpep_dropoff_datetime as timestamp) as dropoff_datetime,
 
     -- trip info
     store_and_fwd_flag,
     cast(passenger_count as int) as passenger_count,
     cast(trip_distance as float64) as trip_distance,
-    cast(trip_type as int) as trip_type,
 
     -- payment info
     cast(fare_amount as numeric) as fare_amount,
@@ -26,4 +25,4 @@ select
     cast(total_amount as numeric) as total_amount,
     cast(payment_type as int) as payment_type
 from {{ source('staging', 'yellow_taxi_partitioned') }}
-when vendor_id is not null
+where vendorid is not null
