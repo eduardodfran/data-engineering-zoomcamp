@@ -14,6 +14,7 @@ select
     store_and_fwd_flag,
     cast(passenger_count as int) as passenger_count,
     cast(trip_distance as float64) as trip_distance,
+    1 as trip_type,  -- yellow taxi can only be street hails which is represented by 1 in the trip_type field
 
     -- payment info
     cast(fare_amount as numeric) as fare_amount,
