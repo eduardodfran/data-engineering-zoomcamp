@@ -13,16 +13,16 @@ select
     -- trip info
     store_and_fwd_flag,
     cast(passenger_count as int) as passenger_count,
-    cast(trip_distance as float) as trip_distance,
-    cast(ctrip_type as int) as ctrip_type,
+    cast(trip_distance as float64) as trip_distance,
+    cast(trip_type as int) as trip_type,
 
     -- payment info
     cast(fare_amount as numeric) as fare_amount,
-    cast(cextra as numeric) as cextra,
+    cast(extra as numeric) as extra,
     cast(mta_tax as numeric) as mta_tax,
     cast(tip_amount as numeric) as tip_amount,
     cast(tolls_amount as numeric) as tolls_amount,
     cast(improvement_surcharge as numeric) as improvement_surcharge,
     cast(total_amount as numeric) as total_amount,
-    cast(payment_type as int) as payment_type,
+    cast(payment_type as int) as payment_type
 from {{ source('staging', 'green_taxi_partitioned') }}
