@@ -26,3 +26,4 @@ select
     cast(total_amount as numeric) as total_amount,
     cast(payment_type as int) as payment_type
 from {{ source('staging', 'yellow_taxi_partitioned') }}
+when vendor_id is not null
