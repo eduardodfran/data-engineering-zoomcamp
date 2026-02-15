@@ -1,15 +1,18 @@
-with green_tripdata as (
-    select * from {{ ref('stg_green_tripdata') }}
-)
+{{ config(materialized='view') }}
 
 with yellow_tripdata as (
-    select * from {{ ref('stg_yellow_tripdata') }}
+    select
+        *,
+        'yellow' as service_type
+    from {{ ref('stg_yellow_tripdata') }}
+),
+green_tripdata as (
+    select
+        *,
+        'green' as service_type
+    from {{ ref('stg_green_tripdata') }}
 )
 
-trips_unioned as (
-    select * from green_tripdata
-    union all
-    select * from yellow_tripdata
-)
-
-select * from trips_unioned
+select * from yellow_tripdata
+union all
+select * from green_tripdata
