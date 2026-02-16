@@ -1,1 +1,2 @@
-select 1 as test_col
+select *
+from {{ ref('fct_monthly_zone_revenue') }}

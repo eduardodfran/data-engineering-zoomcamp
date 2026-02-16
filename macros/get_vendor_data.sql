@@ -4,5 +4,5 @@ case
     when {{ vendor_id }} = 2 then 'Verifone Inc.'
     when {{ vendor_id }} = 3 then 'Unknown Vendor'
     else 'Unknown Vendor'
-end as vendor_name
+end
 {%- endmacro %}
