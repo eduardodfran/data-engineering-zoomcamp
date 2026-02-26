@@ -230,3 +230,9 @@ logs/
 # end dbt Cloud content
 
 .bruin.yml
+logs/runs
+logs/*.log
+*.py[cod]
+logs/queries
+*.db
+settings.json
